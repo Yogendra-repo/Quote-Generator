@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+<!-- Random Quote -->
+
+<div class="container" id="content">
+
+  <% if (breweryData) { %>
+
+    <div class="card" id="random-quote">
+
+      <ul>
+        <li>Quote: <%= breweryData.quote %></li>
+        <li>Author: <%= breweryData.author %></li>
+      </ul>
+
+    </div>
+
+  <% } else { %>
+
+    <div class="container" id="globe-image">
+      <img
+        src="/images/globe.png"
+        width="200px"
+        alt="Icon of the globe"
+      />
+    </div>
+
+  <% } %>
+
+  <form action="/random" method="POST" class="btn">
+    <button id="random-btn" type="submit">
+      Click Here 😊
+    </button>
+  </form>
+
+</div>
+
+<%- include("partials/footer.ejs") %>
