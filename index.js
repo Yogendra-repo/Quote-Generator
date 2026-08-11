@@ -6,7 +6,7 @@ import "dotenv/config";
 const app = express();
 const port = 3000;
 
-const API_URL = process.env.API_URL;
+const API_URL = "https://api.api-ninjas.com/v2/randomquotes";
 const API_KEY = process.env.API_KEY;
 
 app.use(express.static("public"));
