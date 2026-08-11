@@ -31,10 +31,12 @@ app.post("/random", async (req, res) => {
     res.render("index.ejs", { breweryData: quoteData });
 
   } catch (error) {
-    console.log("Status:", error.response?.status);
-    console.log("API Error:", error.response?.data);
-    res.status(500).send("Error retrieving quote from API");
-  }
+  console.log("Status:", error.response?.status);
+  console.log("API Error:", error.response?.data);
+  console.log("Error message:", error.message);
+  console.log("Error code:", error.code);
+  res.status(500).send("Error retrieving quote from API");
+}
 });
 
 app.listen(port, () => {
